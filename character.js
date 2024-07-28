@@ -1,7 +1,9 @@
 const express = require("express"); //import de express
 const router = express.Router(); //import de router
 const axios = require("axios"); // import axios
+const cors = require("cors");
 
+app.use(cors());
 // recuperation de perso
 router.get("/characters", async (req, res) => {
   // console.log("voici le resultat ", process.env.Z0Cr1Rh9Fny66fwT); //undefined
