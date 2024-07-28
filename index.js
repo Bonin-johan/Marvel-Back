@@ -11,6 +11,6 @@ app.use(charactersRoutes);
 const comicsRoutes = require("./comics");
 app.use(comicsRoutes);
 
-app.listen(process.env.PORT, () => {
+app.listen(3000 || process.env.PORT, () => {
   console.log("🔥🔥🔥Serveur started🔥🔥🔥");
 });

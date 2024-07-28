@@ -27,5 +27,20 @@ router.get("/characters", async (req, res) => {
     return res.status(500).json({ message: error.message });
   }
 });
+// RECUPERER TOUT LES PERSONNAGES
+
+app.get("/marvel/characters", async (req, res) => {
+  try {
+    // Effectuer une requête GET à une API externe
+    const response = await axios.get(
+      `https://lereacteur-marvel-api.herokuapp.com/characters?apiKey=Z0Cr1Rh9Fny66fwT`
+    );
+
+    // Envoyer la réponse de l'API externe au client
+    res.json(response.data);
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+});
 
 module.exports = router;
